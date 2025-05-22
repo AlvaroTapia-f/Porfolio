@@ -1,0 +1,63 @@
+---
+import HTML from "./icons/HTML.astro";
+import CSS from "./icons/CSS.astro";
+import JavaScript from "./icons/JavaScript.astro";
+const TAGS = {
+  HTML: {
+    name: "HTML",
+    icon: HTML,
+  },
+  CSS: {
+    name: "CSS",
+    icon: CSS,
+  },
+  JavaScript: {
+    name: "JavaScript",
+    icon: JavaScript,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Proyecto 1",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.",
+    link: "#",
+    gitHub: "#",
+    srcImg: "https://placehold.co/400x250/png",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript],
+  },
+  {
+    title: "Proyecto 1",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.",
+    link: "#",
+    gitHub: "#",
+    srcImg: "https://placehold.co/400x250/png",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript],
+  },
+  {
+    title: "Proyecto 1",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.",
+    link: "#",
+    gitHub: "#",
+    srcImg: "https://placehold.co/400x250/png",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript],
+  },
+];
+import ProjectCard from "./ProjectCard.astro";
+---
+
+{
+  PROJECTS.map((project) => (
+    <ProjectCard
+      title={project.title}
+      srcImg={project.srcImg}
+      description={project.description}
+      link={project.link}
+      gitHub={project.gitHub}
+      tags={project.tags}
+    />
+  ))
+}

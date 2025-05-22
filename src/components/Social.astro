@@ -1,0 +1,31 @@
+---
+import GitHubIcon from "./icons/GitHubIcon.astro";
+import GmailIcon from "./icons/GmailIcon.astro";
+import LinkedinIcon from "./icons/LinkedinIcon.astro";
+import SocialIndividual from "./SocialIndividual.astro";
+---
+
+<nav>
+  <ul class="flex items-center gap-2 py-2">
+    <li>
+      <SocialIndividual
+        href="https://www.linkedin.com/in/alvaro-tapia-123414340/"
+      >
+        <LinkedinIcon class="size-4" />
+        LinkedIn
+      </SocialIndividual>
+    </li>
+    <li>
+      <SocialIndividual href="https://github.com/AlvaroTapia-f">
+        <GitHubIcon class="size-4" />
+        GitHub
+      </SocialIndividual>
+    </li>
+    <li>
+      <SocialIndividual href="mailto:tapia.alvaro.02@gmail.com">
+        <GmailIcon class="size-4" />
+        Contacto
+      </SocialIndividual>
+    </li>
+  </ul>
+</nav>

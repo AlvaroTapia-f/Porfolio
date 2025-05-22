@@ -1,0 +1,40 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import "./src/styles/global.css";
+import "@fontsource-variable/roboto-mono";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Porfolio Alvaro Tapia</title>
+  </head>
+  <body
+    class="bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#12071b_1px)] bg-[size:20px_20px]"
+  >
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    color-scheme: light dark;
+  }
+  html {
+    font-family: "Roboto Mono Variable", monospace;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    min-height: 100dvh;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+</style>

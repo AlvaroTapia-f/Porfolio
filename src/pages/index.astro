@@ -1,16 +1,46 @@
 ---
-
+import Badge from "../components/Badge.astro";
+import CodeIcon from "../components/icons/CodeIcon.astro";
+import Projects from "../components/Projects.astro";
+import Social from "../components/Social.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <section
+    id=""
+    class="flex flex-col justify-center gap-2 min-h-[400px] w-full p-2 md:w-[740px] md:h-[500px] md:px-0 lg:w-[900px] lg:gap-4"
+  >
+    <div class="flex items-center gap-4">
+      <img
+        src="/FotoCarnet.jpg"
+        alt="Alvaro"
+        class="rounded-full size-28 p-2"
+      />
+      <a
+        href="https://www.linkedin.com/in/alvaro-tapia-123414340/"
+        target="_blank"
+        class="flex items-center"
+      >
+        <Badge />
+      </a>
+    </div>
+    <h1 class="text-[#f1e7ff] flex items-center gap-2 text-4xl font-bold pb-2">
+      Hola, soy Alvaro
+    </h1>
+    <p class="text-wrap">
+      Estudiante de ingeniería en sistemas de información y programador full
+      stack. Me gusta aprender nuevas tecnologías y mejorar mis habilidades.
+      Disfruto los desafios y aplicar soluciones creativas a diversos problemas.
+    </p>
+    <Social />
+  </section>
+  <section id="Proyectos" class="py-2">
+    <div class="flex items-center gap-2 pb-4">
+      <CodeIcon class="size-8" />
+      <h1 class="text-3xl font-bold">Proyectos</h1>
+    </div>
+    <Projects />
+  </section>
+  <section id="SobreMi"></section>
+</Layout>
