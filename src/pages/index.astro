@@ -1,9 +1,12 @@
 ---
 import Badge from "../components/Badge.astro";
+import Experience from "../components/Experience.astro";
 import CodeIcon from "../components/icons/CodeIcon.astro";
 import Projects from "../components/Projects.astro";
 import Social from "../components/Social.astro";
 import Layout from "../layouts/Layout.astro";
+import AboutMe from "../components/AboutMe.astro";
+import Skills from "../components/Skills.astro";
 ---
 
 <Layout>
@@ -28,19 +31,39 @@ import Layout from "../layouts/Layout.astro";
     <h1 class="text-[#f1e7ff] flex items-center gap-2 text-4xl font-bold pb-2">
       Hola, soy Alvaro
     </h1>
-    <p class="text-wrap">
+    <p class="text-pretty">
       Estudiante de ingeniería en sistemas de información y programador full
       stack. Me gusta aprender nuevas tecnologías y mejorar mis habilidades.
       Disfruto los desafios y aplicar soluciones creativas a diversos problemas.
     </p>
     <Social />
   </section>
-  <section id="Proyectos" class="py-2">
+  <section id="Proyectos" class="py-4">
     <div class="flex items-center gap-2 pb-4">
       <CodeIcon class="size-8" />
       <h1 class="text-3xl font-bold">Proyectos</h1>
     </div>
     <Projects />
   </section>
-  <section id="SobreMi"></section>
+  <section id="Educacion" class="py-4">
+    <div class="flex items-center gap-2 pb-4">
+      <CodeIcon class="size-8" />
+      <h1 class="text-3xl font-bold">Educación</h1>
+    </div>
+    <Experience />
+  </section>
+  <section id="SobreMi" class="py-4">
+    <div class="flex items-center gap-2 pb-4">
+      <CodeIcon class="size-8" />
+      <h1 class="text-3xl font-bold">Sobre Mi</h1>
+    </div>
+    <AboutMe />
+  </section>
+  <section id="Habilidades" class="py-4">
+    <div class="flex items-center gap-2 pb-4">
+      <CodeIcon class="size-8" />
+      <h1 class="text-3xl font-bold">Skills</h1>
+    </div>
+    <Skills />
+  </section>
 </Layout>

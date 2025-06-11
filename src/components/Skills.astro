@@ -1,0 +1,145 @@
+---
+import HTML from "./icons/HTML.astro";
+import CSS from "./icons/CSS.astro";
+import JavaScript from "./icons/JavaScript.astro";
+import Java from "./icons/Java.astro";
+import Spring from "./icons/Spring.astro";
+import Sql from "./icons/Sql.astro";
+import ReactIcon from "./icons/React.astro";
+import TypeScriptIcon from "./icons/TypeScript.astro";
+import NodejsIcon from "./icons/NodeJs.astro";
+import ExpressIcon from "./icons/ExpressJs.astro";
+import MongoDBIcon from "./icons/MongoDB.astro";
+import GitIcon from "./icons/Git.astro";
+import VSCodeIcon from "./icons/VSCode.astro";
+import PostmanIcon from "./icons/Postman.astro";
+import SwaggerIcon from "./icons/Swagger.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
+const skills = {
+  HTML: {
+    name: "HTML",
+    icon: HTML,
+    section: "Frontend",
+  },
+  CSS: {
+    name: "CSS",
+    icon: CSS,
+    section: "Frontend",
+  },
+  JavaScript: {
+    name: "JavaScript",
+    icon: JavaScript,
+    section: "Frontend",
+  },
+  Java: {
+    name: "Java",
+    icon: Java,
+    section: "Backend",
+  },
+  Spring: {
+    name: "Spring",
+    icon: Spring,
+    section: "Backend",
+  },
+  SQL: {
+    name: "SQL",
+    icon: Sql,
+    section: "Backend",
+  },
+  React: {
+    name: "React",
+    icon: ReactIcon,
+    section: "Frontend",
+  },
+  TypeScript: {
+    name: "TypeScript",
+    icon: TypeScriptIcon,
+    section: "Frontend",
+  },
+  NodeJS: {
+    name: "Node.js",
+    icon: NodejsIcon,
+    section: "Backend",
+  },
+  ExpressJS: {
+    name: "Express.js",
+    icon: ExpressIcon,
+    section: "Backend",
+  },
+  MongoDB: {
+    name: "MongoDB",
+    icon: MongoDBIcon,
+    section: "Aprendiendo",
+  },
+  Git: {
+    name: "Git",
+    icon: GitIcon,
+    section: "Herramientas",
+  },
+  VSCode: {
+    name: "Visual Studio Code",
+    icon: VSCodeIcon,
+    section: "Herramientas",
+  },
+  Postman: {
+    name: "Postman",
+    icon: PostmanIcon,
+    section: "Herramientas",
+  },
+  Swagger: {
+    name: "Swagger",
+    icon: SwaggerIcon,
+    section: "Herramientas",
+  },
+  Astro: {
+    name: "Astro",
+    icon: AstroIcon,
+    section: "Aprendiendo",
+  },
+};
+
+const sections = [
+  { key: "Frontend", label: "Frontend" },
+  { key: "Backend", label: "Backend" },
+  { key: "Aprendiendo", label: "Aprendiendo" },
+  { key: "Herramientas", label: "Herramientas" },
+];
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+  {
+    sections.map(({ key, label }) => (
+      <div class="bg-[#18192a]/70 border border-[#27034b] rounded-2xl p-6 shadow-xl flex flex-col transition hover:scale-[1.02] hover:border-[#a18cd1]/60">
+        <h3
+          class={`text-2xl font-bold mb-6 tracking-wide ${
+            key === "Aprendiendo"
+              ? "text-orange-300"
+              : key === "Herramientas"
+                ? "text-blue-300"
+                : "text-cyan-200"
+          }`}
+        >
+          {label}
+        </h3>
+        <div class="flex flex-wrap gap-6 justify-center">
+          {Object.values(skills)
+            .filter((skill) =>
+              Array.isArray(skill.section)
+                ? skill.section.includes(key)
+                : skill.section === key
+            )
+            .map((skill) => (
+              <div class="flex flex-col items-center w-24 group">
+                <div class="rounded-xl bg-[#27034b]/40 p-3 mb-2 shadow-md transition group-hover:bg-[#a18cd1]/20 group-hover:scale-110">
+                  <skill.icon class="w-12 h-12" />
+                </div>
+                <span class="text-sm text-center text-[#f1e7ff] opacity-90">
+                  {skill.name}
+                </span>
+              </div>
+            ))}
+        </div>
+      </div>
+    ))
+  }
+</div>

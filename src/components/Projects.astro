@@ -2,6 +2,9 @@
 import HTML from "./icons/HTML.astro";
 import CSS from "./icons/CSS.astro";
 import JavaScript from "./icons/JavaScript.astro";
+import Java from "./icons/Java.astro";
+import Spring from "./icons/Spring.astro";
+import Sql from "./icons/Sql.astro";
 const TAGS = {
   HTML: {
     name: "HTML",
@@ -15,35 +18,38 @@ const TAGS = {
     name: "JavaScript",
     icon: JavaScript,
   },
+  Java: {
+    name: "Java",
+    icon: Java,
+  },
+  Spring: {
+    name: "Spring",
+    icon: Spring,
+  },
+  SQL: {
+    name: "SQL",
+    icon: Sql,
+  },
 };
 
 const PROJECTS = [
   {
-    title: "Proyecto 1",
+    title: "Proyecto Magneto API",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.",
-    link: "#",
-    gitHub: "#",
-    srcImg: "https://placehold.co/400x250/png",
-    tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript],
+      "API REST que responde a una evaluación técnica, analiza una matriz de strings de NxN y devuelve un valor booleano si se cumplen ciertas condiciones. La API esta construida en Java con Spring Boot y la base de datos es h2. Puedes encontrar la documentación de la API en el enlace de abajo.",
+    link: "",
+    gitHub: "https://github.com/AlvaroTapia-f/ProyectoMagnetoApi",
+    srcImg: "./MagnetoAPIExample1.webp",
+    tags: [TAGS.Java, TAGS.Spring],
   },
   {
-    title: "Proyecto 1",
+    title: "API REST de Gestión Integral de Personas y Libros",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.",
-    link: "#",
-    gitHub: "#",
-    srcImg: "https://placehold.co/400x250/png",
-    tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript],
-  },
-  {
-    title: "Proyecto 1",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.",
-    link: "#",
-    gitHub: "#",
-    srcImg: "https://placehold.co/400x250/png",
-    tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript],
+      "Aplicación backend robusta para la gestión eficiente de personas y libros; ofrece API RESTful documentada, integración con base de datos y arquitectura escalable, ideal como base para sistemas de gestión modernos.",
+    link: "",
+    gitHub: "https://github.com/AlvaroTapia-f/ProyectoApiRestCompleto",
+    srcImg: "./APIRESTExample.webp",
+    tags: [TAGS.Java, TAGS.Spring, TAGS.SQL],
   },
 ];
 import ProjectCard from "./ProjectCard.astro";

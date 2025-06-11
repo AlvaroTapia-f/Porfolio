@@ -1,24 +1,23 @@
 ---
 const { title, srcImg, description, link, gitHub, tags } = Astro.props;
+import GitHubIcon from "./icons/GitHubIcon.astro";
+import LaptopIcon from "./icons/LaptopIcon.astro";
 ---
 
 <div
-  class="py-4 flex flex-col items-center rounded-lg md:flex-row md:justify-around md:items-center md:max-w-full group"
+  class="py-4 flex flex-col items-center rounded-lg gap-2 md:flex-row md:justify-around md:items-center md:max-w-full group"
 >
-  <a
-    href={link}
-    target="_blank"
-    class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50"
+  <div
+    class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50 md:max-w-[450px]"
   >
     <img
-      class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-      loading="lazy"
+      class="object-cover object-top transition duration-500 md:scale-110 md:group-hover:scale-105"
       src={srcImg}
-      alt=""
+      alt="{title} project image"
     />
-  </a>
+  </div>
   <div
-    class="pl-6 flex flex-col justify-center leading-normal h-[250px] max-w-[500px]"
+    class="pl-6 flex flex-col justify-center leading-normal md:max-w-[500px]"
   >
     <h5
       class="pb-3 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
@@ -37,20 +36,34 @@ const { title, srcImg, description, link, gitHub, tags } = Astro.props;
       <p class="pb-3 font-normal text-gray-700 dark:text-gray-400">
         {description}
       </p>
-      <a
-        href="#"
-        target="_blank"
-        class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
-      >
-        Code
-      </a>
-      <a
-        href="#"
-        target="_blank"
-        class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
-      >
-        Code
-      </a>
+      {
+        gitHub && (
+          <a
+            href={gitHub}
+            target="_blank"
+            class="flex gap-2 items-center text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800/70 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+          >
+            <span>
+              <GitHubIcon class="size-5" />
+            </span>
+            Code
+          </a>
+        )
+      }
+      {
+        link && (
+          <a
+            href={link}
+            target="_blank"
+            class="flex gap-2 items-center text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800/70 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+          >
+            <span>
+              <LaptopIcon class="size-6" />
+            </span>
+            Preview
+          </a>
+        )
+      }
     </div>
   </div>
 </div>
